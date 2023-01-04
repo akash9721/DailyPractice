@@ -1,0 +1,61 @@
+// Smallest subarray with given sum
+#include <bits/stdc++.h>
+using namespace std;
+int smallestSubarrayWithGivenSum(int a[],int n,int target){
+    int left=0;
+    int right=0;
+    int cnt=INT_MAX;
+    int sum=0;
+    while(right<n){
+        sum+=a[right];
+        if(sum>=target){
+            while(sum>=target){
+                sum=sum-a[left];
+                left++;
+            }
+            cnt=min(cnt,right-left+2);
+        }
+          right++;
+    }
+    return cnt;
+}
+int main() {
+    int a[]={4,2,2,7,8,1,2,8,1,0};
+    int n=sizeof(a)/sizeof(a[0]);
+    int target=8;
+    cout<<"smallest subarray with given sum is:=    "<<smallestSubarrayWithGivenSum(a,n,target);
+    return 0;
+}
+
+
+////////////////////////////////java solution================================================
+
+package com.java.dsa;
+
+public class SmallestSubArraySum {
+
+	public static int minSubArrayLen(int target, int[] a) {
+		int n = a.length;
+		int size = Integer.MAX_VALUE;
+		int sum = 0;
+		int left = 0;
+		for (int right = 0; right < n; right++) {
+			sum += a[right];
+			while (sum >= target) {
+				size = Math.min(size, right - left + 1);
+				sum -= a[left];
+				left++;
+			}
+		}
+		return size == Integer.MAX_VALUE ? 0 : size;
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 4, 2, 2, 7, 8, 1, 2, 8, 1, 0 };
+		int n = a.length;
+		int target = 8;
+		System.out.println("smallest subarray with given sum is:= " + minSubArrayLen(target, a));
+
+	}
+
+}
