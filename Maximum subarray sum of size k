@@ -1,0 +1,31 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int maxSumOfSizeK(int a[],int n,int k){
+    int left=0;
+    int right=0;
+    int maxsum=INT_MIN;
+    int currsum=0;
+    while(right<n){
+        currsum+=a[right];
+        if(right-left+1<k){
+            right++;
+        }
+        else if(right-left+1==k){
+            maxsum=max(maxsum,currsum);
+            currsum-=a[left];
+            left++;
+            right++;
+        }
+    }
+    return maxsum;
+}
+int main() {
+    // Write C++ code here
+    
+    int a[]={4,2,1,7,8,1,2,8,1,0};
+    int n=sizeof(a)/sizeof(a[0]);
+    int k=3;
+    cout<<"maximum sum of size "<<k<<" is:= "<<maxSumOfSizeK(a,n,k);
+    return 0;
+}
