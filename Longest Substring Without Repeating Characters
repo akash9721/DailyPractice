@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+int longestKSubstr(string s){
+    unordered_map<char,int> mp;
+    int start=0;
+    int len=INT_MIN;
+    for(int end=0;end<s.length();end++){
+        mp[s[end]]++;
+        if(mp[s[end]]==1){
+            len=max(len,end-start+1);
+        }
+        else if(mp[s[end]]>1){
+            while(mp[s[end]]>1){
+                mp[s[start]]--;
+                if(mp[s[start]]==0)
+                  mp.erase(mp[s[start]]);
+                start++;  
+            }
+        }
+    }
+    return len==INT_MIN?0:len;
+   
+}
+int main() {
+    // Write C++ code here
+    string s = "bbbbb";
+    // Function Call
+    cout<<"longest substring with without duplicate characters: "<<longestKSubstr(s);
+    return 0;
+}
