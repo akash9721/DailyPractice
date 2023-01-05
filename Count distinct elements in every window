@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+void cntDistinctInEveryWindow(int a[],int k,vector<int>&v,int n){
+    unordered_map<int,int> map;
+    int start=0;
+    for(int end=0;end<n;end++){
+        map[a[end]]++;
+        if(end-start+1==k){
+            v.push_back(map.size());
+            map[a[start]]--;
+            if(map[a[start]]==0){
+                map.erase(a[start]);
+            }
+            start++;
+        }
+    }
+}
+int main() {
+    // Write C++ code here
+    int a[] = {1, 2, 1, 3, 4, 2, 3};
+    int n=sizeof(a)/sizeof(a[0]);
+    int k = 4;
+    vector<int> v;
+    cntDistinctInEveryWindow(a,k,v,n);
+    cout<<"distinct element in every windows are: ";
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<" ";
+    }
+    return 0;
+}
