@@ -1,0 +1,52 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+  int search(string pat, string txt) {
+	    // code here
+	    unordered_map<char,int> map;
+	    for(int i=0;i<pat.length();i++){
+	        map[pat[i]]++;
+	    }
+	    
+	    int count=map.size();
+	    int n=txt.length();
+	    int k=pat.length();
+	    int start=0;
+	    int end=0;
+	    int ans=0;
+	    while(end<n){
+	        if(map.find(txt[end])!=map.end()){
+	            map[txt[end]]--;
+	            if(map[txt[end]]==0){
+	                count--;
+	            }
+	        }
+	        
+	        if(end-start+1<k){
+	            end++;
+	        }
+	        
+	        else if(end-start+1==k){
+	            //calculation
+	            if(count==0)
+	               ans++;
+	            //move start pointer
+	            if(map.find(txt[start])!=map.end()){
+	                map[txt[start]]++;
+	                if(map[txt[start]]==1){
+	                    count++;
+	                }
+	            }
+	            start++;
+	            end++;
+	        }
+	    }
+	    return ans;
+	}
+int main() {
+    string txt = "forxxorfxdofr";
+    string pat="for";
+    cout<<"Occurence of anagram is: "<<search(pat,txt);
+
+    return 0;
+}
