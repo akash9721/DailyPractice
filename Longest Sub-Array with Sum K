@@ -1,0 +1,21 @@
+int lenOfLongSubarr(int a[],  int n, int k) 
+    { 
+        // Complete the function
+        unordered_map<int,int> m;
+        int currsum=0;
+        int maxi=0;
+        for(int i=0;i<n;i++)
+        {
+            currsum+=a[i];
+            if(currsum==k)
+            maxi=i+1;
+            
+            if(m.find(currsum)==m.end())
+            m[currsum]=i;
+            if(m.find(currsum-k)!=m.end())
+            {
+                maxi=max(maxi,i-m[currsum-k]);
+            }
+        }
+        return maxi;
+    } 
