@@ -1,0 +1,29 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int findDuplicate(int nums[],int n){
+        int i=0;
+        while(i<n){
+            if(nums[i]!=i+1){
+                if(nums[i]!=nums[nums[i]-1]){
+                    swap(nums[i],nums[nums[i]-1]);
+                }
+                else{
+                    return nums[i];
+                }
+            }
+            else{
+                i++;
+            }
+        }
+        return -1;
+}
+
+int main() {
+    // Write C++ code here
+    int a[]={1,3,4,2,2};
+    int n=sizeof(a)/sizeof(a[0]);
+    cout<<"duplicate no is: "<<findDuplicate(a,n);
+
+    return 0;
+}
