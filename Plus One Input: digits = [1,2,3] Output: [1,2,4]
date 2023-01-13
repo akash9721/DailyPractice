@@ -1,0 +1,19 @@
+class Solution {
+    public int[] plusOne(int[] digit) {
+        //case for 1234
+        //output 1234->1235   and  129->130
+        int n=digit.length;
+        for(int i=n-1;i>=0;i--){
+            if(digit[i]<9){
+                digit[i]++;
+                return digit;
+            }
+            digit[i]=0;
+        }
+        //this case for if no is 999 or 9999
+        //then output for 999-1000   and  9999-10000
+        int a[]=new int[n+1];
+        a[0]=1;
+        return a;
+    }
+}
