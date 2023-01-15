@@ -1,0 +1,43 @@
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        vector<int> ans;
+        unordered_map<char,int> map;
+        for(int i=0;i<p.length();i++){
+            map[p[i]]++;
+        }
+        int n=s.length();
+        int k=p.length();
+        int start=0;
+        int end=0;
+        int cnt=map.size();
+        while(end<n){
+            if(map.find(s[end])!=map.end()){
+                map[s[end]]--;
+                if(map[s[end]]==0){
+                    cnt--;
+                }
+            }
+
+            if(end-start+1<k){
+                end++;
+            }
+
+            else if(end-start+1==k){
+                if(cnt==0){
+                    ans.push_back(start);
+                }
+
+                if(map.find(s[start])!=map.end()){
+                    map[s[start]]++;
+                    if(map[s[start]]==1){
+                        cnt++;
+                    }
+                }
+                start++;
+                end++;
+            }
+        }
+        return ans;
+    }
+};
