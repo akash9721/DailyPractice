@@ -1,0 +1,16 @@
+class Solution {
+public:
+    void swapFun(vector<int> &v,int start,int end){
+        while(start<=end){
+            swap(v[start],v[end]);
+            start++;
+            end--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        k=k%nums.size();
+        swapFun(nums,0,nums.size()-k-1);
+        swapFun(nums,nums.size()-k,nums.size()-1);
+        swapFun(nums,0,nums.size()-1);
+    }
+};
