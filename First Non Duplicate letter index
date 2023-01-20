@@ -1,0 +1,38 @@
+package com.java.dsa;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class FirstNonRepetingCharacter {
+
+	private static void solve(String str) {
+		char arr[]=str.toCharArray();
+		Map<Character, Integer> map=new HashMap<>();
+		for(int i=0;i<arr.length;i++) {
+			if(map.containsKey(arr[i])) {
+				map.put(arr[i], map.get(arr[i])+1);
+			}
+			else {
+				map.put(arr[i], 1);
+			}
+		}
+		
+		boolean flag=false;
+		for(int i=0;i<arr.length;i++) {
+			if(map.get(arr[i])==1) {
+				flag=true;
+				System.out.println("first non repeating character index is: "+(i+1));
+				break;
+			}
+		}
+		if(flag==false) {
+			System.out.println("there is no repeating character");
+		}
+	}
+	public static void main(String[] args) {
+		//String str="statistics";
+		String str="hackthegame";
+		solve(str);
+	}
+
+}
