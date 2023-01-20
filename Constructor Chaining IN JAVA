@@ -1,0 +1,31 @@
+Constructor chaining is the process of calling a sequence of constructors.
+We can do it in two ways: by using this() keyword for chaining constructors 
+in the same class. by using super() keyword for chaining constructors from the parent class.
+
+package com.java;
+class Base{
+	public Base() {
+		System.out.println("this is default constructor of base");
+	}
+	
+	Base(int a,int b){
+		this();
+		System.out.println("This is parameterize constructor of base");
+		System.out.println("sum is: "+(a+b));
+	}
+}
+
+class Derived extends Base{
+	
+	Derived(int a,int b){
+		super(5,5);
+		System.out.println("This is parameterize constructor of derived");
+		System.out.println("sum is: "+(a+b));
+	}
+}
+public class ConstructorChaining {
+	public static void main(String[] args) {
+		Derived derived=new Derived(7, 7);
+	}
+
+}
