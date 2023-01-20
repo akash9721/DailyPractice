@@ -1,0 +1,65 @@
+Creating an Immutable Class in Java
+To create an immutable class in Java, you need to follow these general principles:
+
+1.Declare the class as final so it can’t be extended.
+2.Make all of the fields private so that direct access is not allowed.
+3.Don’t provide setter methods for variables.
+4.Make all mutable fields final so that a field’s value can be assigned only once.
+5.Initialize all fields using a constructor method performing deep copy.
+
+
+
+
+
+package com.java;
+
+
+class Car{
+	int speed;
+	public Car(int speed) {
+		this.speed=speed;
+	}
+}
+
+public final class ImmutableClass {
+	
+	 private final int id;
+	 private final String name;
+	 private final Car car;
+	 
+	public int getId() {
+		return id;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public ImmutableClass(int id, String name,Car c) {
+		super();
+		this.id = id;
+		this.name = name;
+		Car newcar=new Car(c.speed);  // deep copying means we create diff obj
+		
+		//this.car = c;               // shallow copying means if we are passing the same obj ,means pointing to the same object
+		                              // if i do change then it change, means obj value are changed and now it is not immutable class
+		this.car=newcar;
+		
+		
+	}
+
+
+	public static void main(String[] args) {
+		Car car= new Car(120);
+		ImmutableClass immu=new ImmutableClass(1, "akash",car);
+		System.out.println(immu.id);
+		System.out.println(immu.getName());
+		System.out.println(immu.car .speed);
+		car.speed=150;
+		System.out.println(immu. car.speed);
+		
+	}
+
+}
