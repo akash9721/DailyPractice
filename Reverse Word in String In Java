@@ -1,0 +1,24 @@
+package com.java.dsa;
+
+public class ReverseWordInString {
+	private static void display(String[] arr) {
+		for(String str:arr) {
+			System.out.print(str+" ");
+		}
+	}
+	private static void revWords(String str) {
+		String arr[]=str.split(" ");
+		System.out.println("before reverse: --------");
+		display(arr);
+		System.out.println("\nafter reverse: --------");
+		for(int i=arr.length-1;i>=0;i--) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+	public static void main(String[] args) {
+		String str="akash kumar kashyap from morganstanly";
+		revWords(str);
+	}
+
+
+}
