@@ -1,0 +1,24 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+void revWords(string str){
+    int l=0,r=0;
+    int n=str.length();
+    while(l<n){
+        while(r<n and str[r]!=' ')
+              r++;
+            reverse(str.begin()+l,str.begin()+r);
+            l=r+1;
+            r=l;
+    }
+    reverse(str.begin(),str.end());
+    cout<<"\nAfter reverse: ";
+    cout<<str;
+}
+int main() {
+    string str="akash kumar kashyap from morganstanly";
+    cout<<"Before reverse: ";
+    cout<<str;
+    revWords(str);
+    return 0;
+}
