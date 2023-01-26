@@ -1,0 +1,23 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+bool checkKthBit(int N, int K)
+    {
+        // Write Your Code here
+        int mask=(1<<K);
+        if(mask & N){
+            return true;
+        }
+        return false;
+    }
+int main() {
+    int N=10;
+    int K=3;
+    if(checkKthBit(N,K)){
+        cout<<K<<" bit is set";
+    }
+    else{
+        cout<<K<<" bit is not set";
+    }
+    return 0;
+}
