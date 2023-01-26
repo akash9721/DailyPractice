@@ -1,0 +1,17 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int setKthBit(int N, int K)
+    {
+        // Write Your Code here
+        int mask=(1<<K);
+        int ans=(mask | N);
+        return ans;
+    }
+int main() {
+    int N=10;
+    int K=2;
+    cout<<"After Set K value new No is: "<<setKthBit(N,K);
+
+    return 0;
+}
