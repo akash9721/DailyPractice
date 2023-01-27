@@ -1,0 +1,24 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int toggleBit(int n,int i){
+    int mask=(1<<i);
+    int ans=(mask^n);
+}
+int main() {
+    int n,i;
+    cout<<"enter a no: ";
+    cin>>n;
+    cout<<"\n enter ith no:";
+    cin>>i;
+    cout<<"\n After toggling "<<i<<" bit new no is: "<<toggleBit(n,i);
+    return 0;
+}
+
+
+
+
+
+enter a no: 10
+enter ith no:2
+After toggling 2 bit new no is: 14
