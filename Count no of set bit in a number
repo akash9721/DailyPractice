@@ -1,0 +1,18 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+int cntNoOfSetBit(int n){
+    int cnt=0;
+    while(n!=0){
+        n=n&(n-1);
+        cnt++;
+    }
+    return cnt;
+}
+int main() {
+    int n,i;
+    cout<<"enter a no: ";
+    cin>>n;
+    cout<<"No of set bit in "<<n<<" is: "<<cntNoOfSetBit(n);
+    return 0;
+}
