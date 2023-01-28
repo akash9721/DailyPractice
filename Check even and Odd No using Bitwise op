@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+bool checkEvenOdd(int n){
+    if((n&1)==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+int main() {
+    int n;
+    cout<<"enter a no:";
+    cin>>n;
+    if(checkEvenOdd(n)){
+        cout<<"No is even";
+    }else{
+        cout<<"No is odd";
+    }
+    return 0;
+}
