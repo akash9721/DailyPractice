@@ -1,0 +1,22 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+bool powerOf2(int n){
+    if((n & (n-1))==0){
+        return true;
+    }
+    else{
+        return false;
+    }
+} 
+int main() {
+    int n;
+    cout<<"enter a no:";
+    cin>>n;
+    if(powerOf2(n)){
+        cout<<n<<" is power of 2";
+    }else{
+        cout<<n<<" is not power of 2";
+    }
+    return 0;
+}
