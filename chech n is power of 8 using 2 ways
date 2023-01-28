@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+int powerOf8(int n){
+    if(n<=0)
+       return false;
+       
+    if((n&(n-1))==0 && (n%7==1)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+int powerOf8II(int n){
+    if(n<=0)
+       return false;
+    while(n!=1){
+        if(n%8!=0)
+           return false;
+        n/=8;   
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    cout<<"enter a no:";
+    cin>>n;
+    if(powerOf8II(n)){
+        cout<<n<<" is power of 8";
+    }else{
+        cout<<n<<" is not power of 8";
+    }
+    return 0;
+}
