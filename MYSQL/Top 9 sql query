@@ -1,0 +1,36 @@
+ ******************************top 9 sql query**********************************
+ 
+ >>>find 3rd highest salary from employeeinfo table;
+ select emp_sal from employeeinfo e1 where 2 =(select count(1) from employeeinfo e2 where e2.salary>e1.salary);
+ 
+ select emp_sal from employeeinfo ORDER BY salary DESC LIMIT 2,1;
+ 
+ >>>find Nth highest salary from employeeinfo table;
+ select emp_sal from employeeinfo e1 where N-1 =(select count(1) from employeeinfo e2 where e2.salary>e1.salary);
+ 
+ select emp_sal from employeeinfo ORDER BY salary DESC LIMIT N-1,1;
+ 
+ >>>find duplicate row in a table
+ select *,COUNT(emp_id) from employee group by emp_id having COUNT(emp_id)>1;
+ 
+ >>>find even and odd record from table
+ select * from employee where MOD(emp_id,2)=0;         for even
+ select * from employee where MOD(emp_id,2)=1;         for odd
+ 
+ >>>display first and last recored from employee table
+ select* from employee where emp_id=(select MIN(emp_id) from employee);      first record   
+ select* from employee where emp_id=(select MIN(emp_id) from employee);      last record
+ 
+ >>>how dou you copy of all row from employee table
+ create table newtablename AS select* from employee;                   (select all row from old to new table)
+ create table newtablename AS select emp_name,salary from employee     (only few rows from old table)
+ create table newtablename AS select * from employee WHERE 1=2;        (only for old schema)
+ 
+ >>>list of employee working in same department
+  select d.dept_name,COUNT(e.dept_id) from employee e JOIN department d ON e.dept_id=d.dept_id group by e.dept_id;
+  
+ >>>retrieve the last 3 record from the employee table
+ select * from employee ORDER BY emp_id DESC LIMIT 3;
+ 
+ >>Fetch details of employee whose emp_name end with alphabet 't' and contain 5 letters
+ select * from employee where emp_name like '%t' and LENGTH(emp_name)=5;
