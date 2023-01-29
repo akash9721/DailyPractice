@@ -34,3 +34,4 @@
  
  >>Fetch details of employee whose emp_name end with alphabet 't' and contain 5 letters
  select * from employee where emp_name like '%t' and LENGTH(emp_name)=5;
+ select * from employee where emp_name like '____t';
