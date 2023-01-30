@@ -5,7 +5,7 @@ public:
             return true;
         }
 
-        if(i<0 || i>=board.length() || j<0 || j>=board[0].length() || board[i][j]!=word[ind]){
+        if(i<0 || i>=board.size() || j<0 || j>=board[0].size() || board[i][j]!=word[ind]){
             return false;
         }
 
@@ -17,10 +17,10 @@ public:
                  solve(board,i,j+1,word,ind+1) ||
                  solve(board,i,j-1,word,ind+1);
         board[i][j]=ch;
-        return ans;         
+        return res;         
     }
     bool exist(vector<vector<char>>& board, string word) {
-        for(int i=0;i<board.length();i++){
+        for(int i=0;i<board.size();i++){
             for(int j=0;j<board[0].size();j++){
                 if(solve(board,i,j,word,0)){
                     return true;
