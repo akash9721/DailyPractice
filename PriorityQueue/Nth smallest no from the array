@@ -1,0 +1,56 @@
+package com.java.dsa;
+
+import java.util.Collections;
+import java.util.PriorityQueue;
+
+public class NthLargestElement {
+
+	private static void find3smallestI(int[] a) {
+		int first=Integer.MAX_VALUE;
+		int second=Integer.MAX_VALUE;
+		int third=Integer.MAX_VALUE;
+		for(int i=0;i<a.length;i++) {
+			if(a[i]<first) {
+				third=second;
+				second=first;
+				first=a[i];
+			}
+			else if(a[i]<second && a[i]>first) {
+				third=second;
+				second=a[i];
+			}
+			else if(a[i]<third && a[i]>second) {
+				third=a[i];
+			}
+		}
+		System.out.println("First smallest no is: "+first);
+		System.out.println("Second smallest no is: "+second);
+		System.out.println("Third smallest no is: "+third);
+	}
+	
+
+	private static void find3smallestII(int[] a,int k) {
+		//max priority queue
+		PriorityQueue<Integer> pQueue=new PriorityQueue<>(Collections.reverseOrder());
+		for(int i=0;i<a.length;i++) {
+			pQueue.add(a[i]);
+			if(pQueue.size()>k) {
+				pQueue.remove();
+			}
+		}
+		System.out.println("Third smallest no is: "+pQueue.peek());
+	}
+
+	public static void main(String[] args) {
+		int a[] = { 6, 3, 13, 23, 9, 20 };
+		find3HighestI(a);
+		System.out.println();
+		find3HighestII(a,3);
+		System.out.println();
+		find3smallestI(a);
+		System.out.println();
+		find3smallestII(a,3);
+	}
+
+
+}
