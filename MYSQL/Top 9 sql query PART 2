@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ******************************top 9 sql query part2 **********************************
+  
+  
+  
+  
+  
+  
+  
+  
+ 1. >>query to delete the duplicate record from employee_table
+             +++++++++++++we use selef join++++++++++++++++
+	select e1 from employee_table e1,employee_table e2 where e1.empname=e2.empname and e1.id>e2.id;		 
+	
+2.  >>query to retrieve the first four chracter of employee name from the employee_table table
+    select substring(emp_name,1,4) from employee_table;
+	
+3. >>find no of employee whose dob is between 01/06/1995 to 30/06/1998 and are grouped according to gender
+                  +++++++++++  #if we pass the date in YYYY-MM-DD format
+	select COUNT(*),gender from employee_table where dob BETWEEN '1995-01-01' AND '1998-06-30' group by gender;
+
+4.  >>fetch all the record from the employee_table table order by department in ASC and salary in DESC
+    select * from employee_table order by dept ASC,salary DESC;
+	      (in this we can observe the output if value are repeted)
+  
+5.  >>query to fetch detail of all employee excluding the employee who are HR and ADMIN dept
+    select * from employee_table where department NOT IN('HR','ADMIN');
+  
+6.  >>query to fetch 50% record from the employee_table table
+          ++++++++++++   #work fine when id in proper sequence (no data is deleted)
+		  select * from employee_table where id<=(select COUNT(id)/2 from employee_table);
+		  
+		  +++++++++++    #
+  
+7.  >>query to display the total salary of each employee after adding 10% increment in salary
+     select id,empname,salary,salary+(salary/10) as totalsalaryafterincrement from employee_table;
+    
+8.  >>query to retrieve two minimum and maximum salary
+    select * from employee order by salary desc limit 2;
+	select * from employee_table order by salary ASC limit 2;
+	
+9.  >>query to fetch the employee name and replace the space with '_'
+    select REPLACE(empname,' ','_') from employee_table;
