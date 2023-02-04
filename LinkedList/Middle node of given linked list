@@ -1,0 +1,42 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+struct node{
+  int data;
+  node *next;
+  node(int data){
+      this->data=data;
+      next=NULL;
+  }
+};
+ void display(node*head){
+    node*curr=head;
+    while(curr){
+        cout<<curr->data<<"->";
+        curr=curr->next;
+    }
+    cout<<"NULL";
+}
+int findMiddleElement(node*head){
+    node*slow=head;
+    node*fast=head;
+    while(fast && fast->next){
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return slow->data;
+}
+
+int main() {
+    node *head=new node(2);
+    head->next=new node(4);
+    head->next->next=new node(6);
+    head->next->next->next=new node(7);
+    head->next->next->next->next=new node(5);
+    head->next->next->next->next->next=new node(1);
+    display(head);
+    cout<<endl;
+    int mid=findMiddleElement(head);
+    cout<<"middle element is: "<<mid;
+    return 0;
+}
