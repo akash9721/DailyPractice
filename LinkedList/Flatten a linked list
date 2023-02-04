@@ -1,0 +1,54 @@
+
+    Node*merge(Node*first,Node*second)
+{
+    Node*dummy=new Node(0);
+    Node*ans=dummy;
+    
+    if(first==NULL)
+    return second;
+    
+    if(second==NULL)
+    return first;
+    
+    while(first!=NULL && second!=NULL)
+    {
+        if(first->data<=second->data)
+        {
+            ans->bottom=first;
+            ans=first;
+            first=first->bottom;
+        }
+        else
+        {
+            ans->bottom=second;
+            ans=second;
+            second=second->bottom;
+        }
+    }
+    while(first)
+    {
+       ans->bottom=first;
+       ans=first;
+       first=first->bottom; 
+    }
+    while(second)
+    {
+        ans->bottom=second;
+        ans=second;
+        second=second->bottom;
+    }
+    
+    return dummy->bottom;
+}
+Node *flatten(Node *root)                                                   Expected Time Complexity: O(N*N*M)
+                                                                            Expected Auxiliary Space: O(1                                                                                  
+{
+   // Your code here
+   if(root==NULL || root->next==NULL)
+   return root;
+   
+   root->next=flatten(root->next);
+   root=merge(root,root->next);
+   return root;
+   // return merge(root,flatten(root->next));
+}
