@@ -1,0 +1,27 @@
+//lenofloop
+class Solution
+{
+    //Function to find the length of a loop in the linked list.
+    public static int lenofloop(Node head){
+        int cnt=1;
+        Node temp=head;
+        while(temp.next!=head){
+            cnt++;
+            temp=temp.next;
+        }
+        return cnt;
+    }
+    static int countNodesinLoop(Node head)
+    {
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+            if(slow==fast){
+                   return lenofloop(slow);
+               }
+           }
+           return 0;
+    }
+}
