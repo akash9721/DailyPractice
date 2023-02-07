@@ -1,0 +1,108 @@
+package com.wileyedge.Test;
+
+/*
+ * Example Input
+Input 1:
+
+ A = [0, 1, 0, 1]
+Input 2:
+
+ A = [1, 1, 1, 1]
+
+
+Example Output
+Output 1:
+
+ 4
+Output 2:
+
+ 0
+
+
+Example Explanation
+Explanation 1:
+
+ press switch 0 : [1 0 1 0]
+ press switch 1 : [1 1 0 1]
+ press switch 2 : [1 1 1 0]
+ press switch 3 : [1 1 1 1]
+Explanation 2:
+
+ There is no need to turn any switches as all the bulbs are alread
+ 
+ [0 1 1]
+ [1 0 0]
+ [1 1 1]
+ 
+ // 0 0 0 0
+  * 1 1 1 1
+  * 
+  * 0 0 1 1
+  * 1 1 0 0
+  * 1 1 1 1
+  * 
+  * 0 0 0 1
+  * 1 1 1 0
+  * 1 1 1 1
+  * 
+  * 0 1 0 1
+  * press switch 0 : [1 0 1 0]
+ press switch 1 : [1 1 0 1]
+ press switch 2 : [1 1 1 0]
+ press switch 3 : [1 1 1 1]
+*/
+
+public class Test {
+
+	private static void solve1(int[] a, int n) {
+		int cnt = 0;
+		for (int i = 0; i < n; i++) {
+			if (a[i] == 0) {
+				a[i] = 1;
+				for (int j = i + 1; j < n; j++) {
+					if (a[j] == 0) {
+						a[j] = 1;
+					} else {
+						a[j] = 0;
+					}
+				}
+				cnt++;
+			}
+		}
+		System.out.println(cnt);
+	}
+
+	
+	public static void main(String[] args) {
+		int a[] = { 0, 1, 0, 1 };
+		int n = a.length;
+		//solve1(a, n);
+		solve2(a,n);
+	}
+
+
+	private static void solve2(int[] a, int n) {
+		int cnt=0;
+		for(int i=0;i<n;i++) {
+			
+        /* if the bulb's original state is on and count
+           is odd, it is currently off...*/
+        /* Press this switch to on the bulb and increase
+           the count */
+			if(a[i]==1 && (cnt%2!=0)) {
+	        	   cnt++;
+	           }
+        /* if the bulb's original state is off and
+           count is even, it is currently off...*/
+        /* press this switch to on the bulb and
+               increase the count */
+			if(a[i]==0 && (cnt%2==0)) {
+	        	   cnt++;
+	           }
+		}
+		System.out.println(cnt);
+		
+		
+	}
+
+}
