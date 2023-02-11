@@ -1,0 +1,22 @@
+package com.java.dsa;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class UnionAndIntersection {
+
+	private static void intersectionUsingJava8(int[] a1, int[] a2) {
+		Arrays.stream(a1).filter(x -> Arrays.stream(a2).anyMatch(y -> y == x)).distinct()
+				.forEach(e -> System.out.print(e + " "));
+	}
+
+	public static void main(String[] args) {
+		int a1[] = { 4, 9, 5 };
+		int a2[] = { 9, 4, 9, 8, 4 };
+	
+		System.out.println("intersection of two array using java 8");
+		intersectionUsingJava8(a1, a2);
+	}
+
+}
