@@ -1,0 +1,28 @@
+
+
+     Node* rotate(Node* head, int k)
+    {
+        // Your code here
+        if(head==NULL || head->next==NULL || k==0)
+            return head;
+        int cnt=1;
+        ListNode*p=head;
+        while(p->next!=NULL)
+        {
+            p=p->next;
+            cnt++;
+        }
+        p->next=head;
+        k=k%cnt;
+        k=cnt-k;
+        
+        while(k--)
+        {
+            p=p->next;
+        }
+        head=p->next;
+        p->next=NULL;
+        
+        return head;
+        
+    } 
