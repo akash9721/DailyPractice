@@ -1,0 +1,46 @@
+    
+	Input:
+    S = "aaaabbaa"
+    Output:
+    aabbaa
+    string longestPalindrome(string S){
+        // code here 
+        int start=0;
+        int end=1; //this is range of our substring 
+        int l,h;                                                                      // this will update like from where to where our substring is 
+        for(int i=1;i<S.length();i++)
+        {
+                                                                                     // for even length
+            l=i-1;
+            h=i;                                         
+            while(l>=0 && h<S.length() && S[l]==S[h])
+            {
+                if(h-l+1>end)                                                      here i am checking our previous substring length is less than the curr then we update it
+                { 
+                    start=l;
+                    end=h-l+1;
+                }
+                l--;
+                h++;
+            }
+                                                                                    //for odd length
+            l=i-1;                                         
+            h=i+1;
+            while(l>=0 && h<S.length() && S[l]==S[h])
+            {
+                if(h-l+1>end)
+                {
+                    start=l;
+                    end=h-l+1;
+                }
+                l--;
+                h++;
+            }
+        }
+        string str="";
+        for(int i=start;i<start+end;i++)
+        {
+            str+=S[i];
+        }
+        return str;
+    }
