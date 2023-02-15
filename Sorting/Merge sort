@@ -48,6 +48,7 @@ public class MergeSortDemo {
 	}
 
 	// display the array elements
+	
 	public static void display(int a[], int n) {
 		for (int x : a) {
 			System.out.print(x + " ");
