@@ -1,0 +1,115 @@
+create database assignment;
+use assignment;
+
+create table Customer(
+CustomerId varchar(10) primary key, 
+CustomerName varchar(50), 
+CustomerAddress varchar(100), 
+CustomerContact bigint(11), 
+CustomerCreditLimit bigint(10));
+
+create table Orders(
+OrderId int primary key, 
+CustomerId varchar(10) , 
+Purchase_date date,
+foreign key (CustomerId) references Customer(CustomerId));
+
+create table Product(
+ProductId varchar(10) primary key, 
+ProductName varchar(100), 
+Manufactured_date date);
+
+create table OrderItems(
+OrderId int, 
+ProductId varchar(10), 
+Qty int, 
+Unit_price int,
+foreign key(OrderId) references Orders(OrderId),
+foreign key(ProductId) references Product(ProductID));
+
+insert into Customer values('C101',"Yash","Mumbai",'9898675423',20000);
+insert into Customer values('C102',"Akanksha","Pune",'9456725423',30000);
+insert into Customer values('C103',"Akash","Shimla",'7995923214',18000);
+insert into Customer values('C104',"Anand","Coimbatore",'8985271984',5000);
+insert into Customer values('C105',"Udaya","Bangalore",'9210288313',12000);
+
+insert into Orders values(101,'C101','2022-03-04');
+insert into Orders values(102,'C104','2022-09-04');
+insert into Orders values(103,'C102','2022-07-25');
+insert into Orders values(104,'C102','2022-09-25');
+insert into Orders values(105,'C105','2022-08-30');
+
+insert into Product values(121,"Shampoo",'2022-05-07');
+insert into Product values(120,"ToothBrush",'2021-07-25');
+insert into Product values(123,"Chair",'2020-09-12');
+insert into Product values(125,"Chocolates",'2022-02-24');
+insert into Product values(128,"Books",'2020-05-05');
+
+insert into OrderItems values(101,120,5,25);
+insert into OrderItems values(102,128,3,45);
+insert into OrderItems values(102,123,2,100);
+insert into OrderItems values(103,123,10,500);
+insert into OrderItems values(104,121,7,20);
+insert into OrderItems values(104,120,3,10);
+insert into OrderItems values(105,125,5,25);
+
+QUESTIONS :- 
+-- 1) Count the occurrences of character "a" in customer name. List customer name and count of occurrences.
+-- 2) Retrieve the names of customer whose name starts and ends with vowel.
+-- 3) List the customer name and product name of those who have ordered the highest quantity.        
+-- 4) List the highest total price with a discount of 5%.
+-- 5) Output all the customer id in the table who didn't order toothbrush.
+
+SOLUTIONS :-
+-- 1) Count the occurrences of character "a" in every name. List customer name and count of occurrences.
+SELECT customerName, length(customerName)-length(Replace(lower(customerName),"a","")) 
+FROM customer;
+
+-- 2) Retrieve the names of customer whose name starts and ends with vowel.
+SELECT customername 
+FROM customer 
+WHERE lower (substr(customername,1,1)) IN ('a','e','i','o','u') 
+AND lower (substr(customername,length(customername),1)) IN ('a','e','i','o','u');
+
+SELECT customername
+FROM customer 
+WHERE LEFT(customername , 1) IN ('a','e','i','o','u')
+AND RIGHT(customername,1) IN  ('a','e','i','o','u');
+
+
+-- 3) List the customer name and product name of those who have ordered the highest quantity        
+SELECT p.productname, c.customername 
+	FROM customer c 
+   	 JOIN orders o ON c.customerId = o.customerId
+    	JOIN orderItems oi ON oi.orderId = o.orderId
+    	JOIN product p ON oi.productId = p.productId 
+    	AND Qty IN(
+		SELECT max(Qty) FROM orderItems);
+
+
+
+
+-- List total price of each order and give a discount of 5% to the highest total price
+-- 4) List highest total price with a discount of 5%
+CREATE TEMPORARY TABLE temp_t1 
+SELECT Qty*unit_price AS TotalPrice 
+FROM orderitems 
+GROUP BY orderid 
+ORDER BY totalPrice 
+DESC LIMIT 1;
+
+UPDATE temp_t1 SET totalPrice=totalprice-(0.05*totalPrice);
+
+SELECT * FROM temp_t1;
+
+-- 5) Output all the customer id in the table who didn't order toothbrush.
+SELECT o.CustomerId 
+FROM orderitems oi
+	JOIN product p  ON p.ProductId=oi.ProductId AND p.ProductName='ToothBrush' 
+    	RIGHT JOIN orders o ON o.OrderId=oi.OrderId 
+WHERE oi.OrderId IS NULL;
+
+
+
+
+
