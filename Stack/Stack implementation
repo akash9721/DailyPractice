@@ -58,6 +58,7 @@ public class StackImp {
 		stack.push(111);
 		stack.display();
 		stack.pop();
+		stack.pop();
 		System.out.println();
 		stack.display();
 		System.out.println("\npeek element is: " + stack.peek());
