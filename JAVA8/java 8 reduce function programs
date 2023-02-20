@@ -23,7 +23,6 @@ public class CountStringBasedTheieLength {
      System.out.println("multiplication of nums:- "+multiplication);
      
      
-     
      List<String> words = Arrays.asList("GFG", "Geeks", "for", "akashkumarkashyap","GeeksQuiz", "GeeksforGeeks");
      //find max length string
      String maxlenstring = words.stream().reduce((word1,word2)->word1.length()>word2.length()?word1:word2).get();
