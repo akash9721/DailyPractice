@@ -15,7 +15,6 @@ class Node {
 		left = right = null;
 	}
 }
-
 public class LeftViewOfBinaryTree {
 
 		private static List<Integer> rightView(Node root) {
