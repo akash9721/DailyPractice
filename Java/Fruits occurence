@@ -18,7 +18,7 @@ public class FruitsOccurence {
 			System.out.println(entry.getKey() + " -> " + entry.getValue());
 		}
 	}
-
+	
 	public static void main(String[] args) {
 		String[] arr = { "apple", "banana", "mango", "apple", "apple", "mango", "banana", "mango", "lichi" };
 		cntFruits(arr);
