@@ -1,0 +1,42 @@
+package com.wiley.TestPract;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class FruitsOccurence {
+	private static void cntFruits(String[] arr) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		for (int i = 0; i < arr.length; i++) {
+			if (map.containsKey(arr[i])) {
+				map.put(arr[i], map.get(arr[i]) + 1);
+			} else {
+				map.put(arr[i], 1);
+			}
+		}
+
+		for (Entry entry : map.entrySet()) {
+			System.out.println(entry.getKey() + " " + entry.getValue());
+		}
+
+		// sort fruits based on fruits name(key)
+		System.out.println("\nSort fruits based on fruits names(keys)");
+		Set<Entry<String, Integer>> entrySet = map.entrySet();
+		List<Entry<String, Integer>> list1 = new ArrayList<Map.Entry<String, Integer>>(entrySet);
+		Collections.sort(list1, (k, v) -> k.getKey().compareTo(v.getKey()));
+		list1.forEach(e -> {
+			System.out.println(e.getKey() + " " + e.getValue());
+		});
+
+	}
+
+	public static void main(String[] args) {
+		String[] arr = { "apple", "banana", "mango", "apple", "apple", "mango", "banana", "mango", "lichi" };
+		cntFruits(arr);
+	}
+
+}
