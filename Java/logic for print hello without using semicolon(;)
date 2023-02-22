@@ -1,0 +1,9 @@
+//		if (System.out.append("hello world") == null) {
+//
+//		}
+//		if (System.out.printf("\nhello world") == null) {
+//
+//		}
+//		for (int i = 0; i++ < 1; System.out.println("\nHello world")) {
+//
+//		}
