@@ -1,0 +1,33 @@
+package com.exception;
+
+import java.util.Scanner;
+
+class InvalidAgeException extends Exception {
+
+	public InvalidAgeException(String msg) {
+		System.out.println(msg);
+	}
+}
+
+public class UserDefineExceptionI {
+
+	private static void vote(int age) throws InvalidAgeException {
+		if (age < 18) {
+			throw new InvalidAgeException("Not eligible for vote ...");
+		} else {
+			System.out.println("Eligible for vote ...");
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Age...");
+		int age = sc.nextInt();
+		try {
+			vote(age);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
