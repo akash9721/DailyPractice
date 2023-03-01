@@ -39,3 +39,31 @@ public class EvenOddNoUsingThread {
 		odd.start();
 	}
 }
+
+
+
+
+
+
++++++++++++++output+++++++++++++++++++++++++
+Even Thread 0
+Odd Thread 1
+Even Thread 2
+Odd Thread 3
+Even Thread 4
+Odd Thread 5
+Even Thread 6
+Odd Thread 7
+Even Thread 8
+Odd Thread 9
+Even Thread 10
+Odd Thread 11
+Even Thread 12
+Odd Thread 13
+Even Thread 14
+Odd Thread 15
+Even Thread 16
+Odd Thread 17
+Even Thread 18
+Odd Thread 19
+
