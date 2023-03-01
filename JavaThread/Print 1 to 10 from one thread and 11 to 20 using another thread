@@ -32,4 +32,25 @@ public class Sample {
 	}
 }
 
+++++++++++++++++++++++output++++++++++++++++++++++++++++++++++++++++++++++
+Thread-0: 1
+Thread-0: 2
+Thread-0: 3
+Thread-0: 4
+Thread-0: 5
+Thread-0: 6
+Thread-0: 7
+Thread-0: 8
+Thread-0: 9
+Thread-0: 10
+Thread-1: 11
+Thread-1: 12
+Thread-1: 13
+Thread-1: 14
+Thread-1: 15
+Thread-1: 16
+Thread-1: 17
+Thread-1: 18
+Thread-1: 19
+Thread-1: 20
 
