@@ -1,0 +1,23 @@
+package com.java8.Features;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeApi {
+	public static void main(String[] args) {
+
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+		LocalDate date = LocalDate.now();
+		System.out.println(dtf.format(date));
+
+		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("hh:mm a");
+		LocalTime time = LocalTime.now();
+		System.out.println(dtf1.format(time));
+
+		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy-MM-dd h:mm a");
+		LocalDateTime dateTime = LocalDateTime.now();
+		System.out.println("Today's Date and Time: " + dtf2.format(dateTime));
+	}
+}
