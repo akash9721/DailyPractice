@@ -1,0 +1,47 @@
+                              ++++++++++++++++++round 1+++++++++++++++++++++
+studen table  
+id   stuname    sub    marks    deptid
+1    A          X       80        1
+2    A          y       70        2
+3    B          X       97        1
+4    B          Y       85        2
+
+dept table
+deptid   deptname    sub
+1        D1          X
+2        D2          y
+3        D3          Z
+
+
+
+1. waq stuname,dept for max mark
+-----select Max(marks) from student;
+
+-----select s.stuname,d.deptname,Max(s.marks) from studen s JOIN dept d ON student.deptid=dept.deptid;
+
+
+
+
+                                     ++++++++++++++++++round 2+++++++++++++++++++++
+                                     
+                                     
+1. Create a table "customer" with attributes, id, name and email, id should be primary key.
+-----create table customer(id int PRIMARY KEY AUTO INCREMENT,name varchar(10) NOT NULL,email varchar(20) NOT NULL);
+
+2. drop email column from customer
+-----alter table customer DROP email;
+
+3. update length of name column from customer table
+-----alter table customer update varchar name(20);
+
+Employee table : id, name, gender, salary
+4. Write a query to find avg salary of Male and Female employees
+-----select AVG(salary) from employee;
+-----select gender,AVG(salary) AS avgsal from employee group by gender;
+gender    avgsal
+male       230.44
+femal      200.06
+
+5. update salary from x to 1000 where id=2
+-----update employee set salary=1000 where id=2;
+
