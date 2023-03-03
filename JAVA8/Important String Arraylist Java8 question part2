@@ -35,3 +35,14 @@ public class StreamApiQuestions {
 		
 	}
 }
+
+
+
+
+
++++++++++++++++++++++++output+++++++++++++++++++++++++++++++++++++++++++
+8
+{anand=1, ashutosh=1, yash=1, akash=1, subhendra=1, poojitha=1, bharath=1, akansha=1}
+{4=[yash], 5=[akash, anand], 7=[akansha, bharath], 8=[poojitha, ashutosh], 9=[subhendra]}
+akash poojitha akansha subhendra yash 
+bharath anand ashutosh 
