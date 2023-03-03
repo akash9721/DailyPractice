@@ -1,0 +1,31 @@
+package com.java.java8;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+public class StreamApiQuestions {
+    public static void main(String[] args) {
+		List<String> str=Arrays.asList("akash","poojitha","akansha","subhendra","yash","bharath","anand","ashutosh");
+		
+		//1. find names which name start with a
+		str.stream().filter(e->e.startsWith("a")).forEach(s->System.out.print(s+" "));
+		System.out.println();
+		
+		//2. sort data in ascending order
+		str.stream().sorted().forEach(s->System.out.print(s+" "));
+		System.out.println();
+		
+		//3. sort data in descending order
+		str.stream().sorted(Comparator.reverseOrder()).forEach(s->System.out.print(s+" "));
+		System.out.println();
+		
+		//4. filter data which length is 5
+		str.stream().filter(e->e.length()==5).forEach(s->System.out.print(s+" "));
+		System.out.println();
+		
+		//5. filter data which length is 5
+		str.stream().filter(e->e.length()>5).forEach(s->System.out.print(s+" "));
+		System.out.println();
+	}
+}
