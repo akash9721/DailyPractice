@@ -29,3 +29,12 @@ public class StreamApiQuestions {
 		System.out.println();
 	}
 }
+
+
+
+++++++++++++++++++++++++++++++++++++++output+++++++++++++++++++++++++++++++++++++++++++++++++++++
+akash akansha anand ashutosh 
+akansha akash anand ashutosh bharath poojitha subhendra yash 
+yash subhendra poojitha bharath ashutosh anand akash akansha 
+akash anand 
+poojitha akansha subhendra bharath ashutosh 
