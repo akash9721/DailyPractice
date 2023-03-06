@@ -1,0 +1,26 @@
+	 
+	 void flatten(Node *root)
+     {
+        //code here
+        if(root==NULL ||(root->left==NULL && root->right==NULL))
+        return;
+        if(root->left!=NULL)
+        {
+            flatten(root->left);
+            //store right subtree into temp
+            Node*temp=root->right;
+            //making root left to root right
+            root->right=root->left;
+            
+            root->left=NULL;
+            
+            // now checking right subtrre where it become null so that we can add temp tree to root left
+            Node*t=root->right;
+            while(t->right!=NULL)
+            {
+                t=t->right;
+            }
+            t->right=temp;
+        }
+        flatten(root->right);
+    }
