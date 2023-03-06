@@ -1,0 +1,52 @@
+
+     Input:
+     N = 6
+     Linked List = 1->2->3->4->5->6->NULL
+     m = 2, n = 4
+     Output: 1 4 3 2 5 6
+     Explanation:
+     Nodes from position 2 to 4 
+     are reversed resulting in
+     1 4 3 2 5 6.
+
+  void reverse(Node*first,Node*last)
+    {
+        Node*prev=NULL;
+        Node*curr=first->next;
+        Node*next;
+        Node*pahla=curr;
+        while(curr!=last)
+        {
+            next=curr->next;
+            curr->next=prev;
+            prev=curr;
+            curr=next;
+        }
+        first->next=prev;
+        pahla->next=last;
+    }
+    Node* reverseBetween(Node* head, int m, int n)      //////////////   time=O(N)  space=O(1)
+    {
+        //code here
+        if(n==m)
+         return head;
+        Node*dummy=new Node(0);
+        dummy->next=head;
+        Node*first=dummy;
+        Node*last=head;
+        int i=1;
+        int j=1;
+        while(i!=m)
+        {
+            i++;
+            first=first->next;
+        }
+        while(j!=n)
+        {
+            j++;
+            last=last->next;
+        }
+        reverse(first,last->next);
+        return dummy->next;
+    }	
+	
