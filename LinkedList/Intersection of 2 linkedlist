@@ -1,0 +1,18 @@
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        
+        if(headA==NULL || headB==NULL)
+            return NULL;
+        
+        ListNode*first=headA;
+        ListNode*second=headB;
+        
+        while(first!=second){
+            
+            //the end of the first iteration we reset the pointer to the head of another linkedlist
+            first=first==NULL?headB:first->next;
+            second=second==NULL?headA:second->next;
+            
+        }
+        return first;
+    }	
