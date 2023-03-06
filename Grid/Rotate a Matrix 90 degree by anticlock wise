@@ -1,0 +1,45 @@
+void rotate(vector<vector<int> >& mat)
+{
+    // Your code goes here
+    int n=mat.size();
+    int m=mat[0].size();
+    // int temp[n][m];
+    // for(int i=0;i<n;i++)
+    // {
+    //     for(int j=0;j<m;j++)
+    //     {
+    //         temp[n-j-1][i]=mat[i][j];
+    //     }
+    // }
+    // for(int i=0;i<n;i++)
+    // {
+    //     for(int j=0;j<m;j++)
+    //     {
+    //         mat[i][j]=temp[i][j];
+    //     }
+    // }
+    
+    
+               //second appoarch
+               
+               
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<m;j++)
+        {
+            swap(mat[i][j],mat[j][i]);      //first we find transpose matrix
+        }
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        int l=0;
+        int h=n-1;
+        while(l<h)
+        {
+            swap(mat[l][i],mat[h][i]);
+            l++;
+            h--;
+        }
+    }
+}
