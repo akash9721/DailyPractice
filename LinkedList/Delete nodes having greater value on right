@@ -1,0 +1,49 @@
+
+LinkedList = 12->15->10->11->5->6->2->3
+Output: 15 11 6 3
+
+
+1. Reverse the list.
+  3->2->6->5->11->10->15->12 
+2. Traverse the reversed list. Keep max till now. If the next node is less than max, then delete the next node, otherwise max = next node. 
+3. Reverse the list again to retain the original order. 
+
+
+    public:
+    Node*reverse(Node*head)
+    {
+        Node*prev=NULL;
+        Node*curr=head;
+        Node*next;
+        while(curr)
+        {
+            next=curr->next;
+            curr->next=prev;2
+            prev=curr;
+            curr=next;
+        }
+        return prev;
+    }
+    
+    Node *compute(Node *head)
+    {
+        // your code goes here
+        head=reverse(head);
+        Node*dummy=new Node(-1);
+        Node*tra=dummy;
+        Node*curr=head;
+        int max=INT_MIN;
+        while(curr)
+        {
+            if(curr->data>=max)
+            {
+                max=curr->data;
+                tra->next=curr;
+                tra=tra->next;
+            }
+            curr=curr->next;
+        }
+        tra->next=NULL;
+        Node*ans=reverse(dummy->next);
+        return ans;
+    }
