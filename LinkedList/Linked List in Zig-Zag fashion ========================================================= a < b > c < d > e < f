@@ -1,0 +1,33 @@
+ ...... 
+LinkedList: 1->2->3->4 
+Output: 1 3 2 4
+  
+   Node *zigZag(Node* head)
+    {
+     // your code goes here
+     if(head==NULL || head->next==NULL)
+     return head;
+     
+     Node*p=head;
+     bool flag=1;
+     while(p->next!=NULL)
+     {
+         if(flag)
+         {
+             if(p->data>p->next->data)
+             {
+                 swap(p->data,p->next->data);
+             }
+             flag=!flag;
+         }
+         else
+         {
+             if(p->data<p->next->data)
+             {
+                 swap(p->data,p->next->data);
+             }
+             flag=!flag;
+         }
+         p=p->next;
+     }
+     return head;
