@@ -1,0 +1,45 @@
+  Node*reverse(Node*head)
+ {
+    Node*prev=NULL;
+    Node*curr=head;
+    Node*next;
+    while(curr!=NULL)
+    {
+        next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+    }
+    return prev;
+  }
+  Node*findmid(Node*head)
+  {
+    Node*slow=head;
+    Node*fast=head->next;
+    while(fast!=NULL && fast->next!=NULL)
+    {
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    return slow;
+  }
+  void reorderList(Node* head) {
+    // Your code here
+    Node*mid=findmid(head);
+    Node*first=head;
+    Node*second=mid->next;
+    mid->next=NULL;
+    
+    second=reverse(second);
+    
+    while(second!=NULL)
+    {
+        Node*temp=first->next;
+        Node*temp2=second->next;
+        first->next=second;
+        second->next=temp;
+        first=temp;
+        second=temp2;
+    }
+ }	
+
