@@ -1,0 +1,21 @@
+
+   Here is a simple method for reversing a Doubly Linked List. All we need to do is swap prev and next pointers for all nodes, change prev of the head (or start) and change the head pointer in the end.
+
+   Node* reverseDLL(Node * head)
+  {
+    //Your code here
+    if(head==NULL || head->next==NULL)
+      return head;
+     
+    Node*temp=NULL;
+    Node*curr=head;
+    
+    while(curr!=NULL)
+    {
+        temp=curr->prev;
+        curr->prev=curr->next;
+        curr->next=temp;
+        curr=curr->prev;
+    }
+    return temp->prev;
+  }	
