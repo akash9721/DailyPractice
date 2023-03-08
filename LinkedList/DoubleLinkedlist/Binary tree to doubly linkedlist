@@ -1,0 +1,32 @@
+
+	void binarytodll(Node*root,Node*&head,Node*&prev,bool &flag)
+    {
+	    //simply do inorder traversal
+		
+        if(root==NULL)
+        return;
+        binarytodll(root->left,head,prev,flag);
+        if(flag){
+            head=root;
+            prev=root;
+            flag=false;
+        }
+        else{                                                                           time=O(N)  space=O(1)
+            prev->right=root;
+            prev->right->left=prev;
+            prev=prev->right;
+        }
+        
+        binarytodll(root->right,head,prev,flag);
+    }
+    Node * bToDLL(Node *root)
+    {
+		// taken two variable for making linkedlist
+        Node*head=NULL;
+        Node*prev=NULL;
+		
+		// taking flage for if i visit first time to root node then make it a first node of dll
+        bool flag=true;
+        binarytodll(root,head,prev,flag);
+        return head;
+    }
