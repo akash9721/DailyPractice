@@ -1,0 +1,44 @@
+
+							MS SECOND ROUND
+BASIC					 
+1. Introduction
+2. About your last sem project
+3. Project that you have done in internship what was your role and responsibility
+
+JAVA					
+You have given a employee object with attribute name,age,salary
+1. Print employee details which age is greater than 30 and salary is greater than 10000 using java 8 stream api
+2. Do you know about the thread
+3. What are the different way of creating threads
+4. Write a simple thread program
+5. There are thread T1, T2 and T3, how can we ensure that thread T1,T2 and T3 will execute in sequence 					
+6. Do you know collections what all collections you have used
+7. What is different between HashMap and TreeMap
+
+MYSQL					
+1. Create a table "customer" with attributes, id, name and email, id should be primary key.
+-----create table customer(id int PRIMARY KEY AUTO INCREMENT,name varchar(10) NOT NULL,email varchar(20) NOT NULL);
+
+2. drop email column from customer
+-----alter table customer DROP email;
+
+3. update length of name column from customer table
+-----alter table customer update varchar name(20);
+
+Employee table : id, name, gender, salary
+4. Write a query to find avg salary of Male and Female employees
+-----select AVG(salary) from employee;
+-----select gender,AVG(salary) AS avgsal from employee group by gender;
+gender    avgsal
+male       230.44
+femal      200.06
+
+5. update salary from x to 1000 where id=2
+-----update employee set salary=1000 where id=2;
+
+DSA					 
+1. Find the nth fibonacci no in Time O(N) and space O(1)
+
+NON TECHNICAL QUESTIONS
+1. How you handle if we assign you new tech stack				 
+
