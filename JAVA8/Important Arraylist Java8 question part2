@@ -37,5 +37,5 @@ public class ArrayListQuestions {
 	
 	//11. return the cube of each number
 	list.stream().map(x->x*x*x).forEach(s->System.out.print(s+" "));
-}
+    }
 }
