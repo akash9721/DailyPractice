@@ -39,7 +39,7 @@ public class EmployeeApp {
 				.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Employee::getSalary)), Optional::get)));
 		System.out.println(collect3);
 
-		// 6. sort employee based on salary desc order
+		// 6. sort employee based on salary desc order 
 		System.out.println("\n Sort employee based on salary in desc order: ");
 		emp.stream().sorted((e1, e2) -> (e2.getSalary() - e1.getSalary())).forEach(System.out::println);
 
