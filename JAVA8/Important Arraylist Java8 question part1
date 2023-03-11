@@ -29,6 +29,7 @@ public class ArrayListQuestions {
 	System.out.println();
 	
 	//5. find out all numbers starting with 2
+	//coverte into string and then filter
 	list.stream().map(x->x+"").filter(e->e.startsWith("2")).forEach(s->System.out.print(s+" "));
 	System.out.println();
 	
