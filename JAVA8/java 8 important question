@@ -25,6 +25,7 @@ public class CommanlyAskedJava8Questions {
 		
 		//3. find all elements from array who starts with 1
 		int[] numbers= {5,9,11,2,8,19,1};
+		 //convert into string and then filter
 		Arrays.stream(numbers).boxed().map(x->x+"").filter(s->s.startsWith("1")).forEach(s->System.out.print(s+" "));
 		
 
