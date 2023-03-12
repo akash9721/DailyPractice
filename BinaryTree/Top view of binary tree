@@ -5,7 +5,6 @@ class Solution
     //from left to right in Binary Tree.
     vector<int> topView(Node *root)
     {
-        //Your code here
         if(root==NULL)
         return {};
         vector<int> ans;
