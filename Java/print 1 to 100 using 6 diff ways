@@ -13,6 +13,7 @@ public class Print1To100InDiffWays {
 		}
 	}
 
+
 	// 2. without using any no, using unicode value
 	private static void withoutUsingNoUsingUnicode() {
 		int first = 'a' / 'a'; // 1
