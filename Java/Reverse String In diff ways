@@ -9,6 +9,7 @@ public class ReverseStringUsingDiffWays {
 		revString4(str);
 	}
 
+
 	private static void revString4(String str) {
 		char[] arr = str.toCharArray();
 		int i = 0;
