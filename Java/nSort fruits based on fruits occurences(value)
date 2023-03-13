@@ -32,6 +32,7 @@ public class FruitsOccurence {
 			System.out.println(e.getKey() + " " + e.getValue());
 		});
 
+
 		// sort fruits based on fruits name(key)
 		System.out.println("\nSort fruits based on fruits occurences(keys)");
 		Set<Entry<String, Integer>> entrySet1 = map.entrySet();
