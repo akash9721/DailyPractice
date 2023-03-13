@@ -31,9 +31,8 @@ public class FruitsOccurence {
 		list1.forEach(e -> {
 			System.out.println(e.getKey() + " " + e.getValue());
 		});
-
 	}
-
+	
 	public static void main(String[] args) {
 		String[] arr = { "apple", "banana", "mango", "apple", "apple", "mango", "banana", "mango", "lichi" };
 		cntFruits(arr);
