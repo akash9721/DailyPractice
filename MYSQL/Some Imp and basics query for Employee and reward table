@@ -31,8 +31,6 @@ INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (2, '2019-02-15
 INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (3, '2019-04-22', '2000');
 INSERT INTO reward (Employee_ref_id, date_reward, amount) VALUES (1, '2019-06-20', '8000');
 
-
-
 Assignment: 
 
 1. Get all the employees
