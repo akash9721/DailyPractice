@@ -8,9 +8,6 @@ DOB date NOT NULL,
 gender varchar(265) NOT NULL
 );
 
-
-
-
 INSERT INTO employee_table (Id, empname, email, department, salary, DOB,gender) VALUES
 (1, 'Karan Mehta', 'Karan@gmail.com','HR', 300000, '1998-05-10','M'),
 (2, 'Rohit Sharma', 'Rohit@gmail.com','Admin', 75000, '1997-01-25','M'),
