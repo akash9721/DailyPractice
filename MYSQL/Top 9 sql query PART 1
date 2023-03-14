@@ -14,8 +14,8 @@
  select *,COUNT(emp_id) from employee group by emp_id having COUNT(emp_id)>1;
  
  >>>find even and odd record from table
- select * from employee where MOD(emp_id,2)=0;         for even
- select * from employee where MOD(emp_id,2)=1;         for odd
+ select * from employee where MOD(emp_id,2)=0;         for even no
+ select * from employee where MOD(emp_id,2)=1;         for odd no
  
  >>>display first and last recored from employee table
  select* from employee where emp_id=(select MIN(emp_id) from employee);      first record   
