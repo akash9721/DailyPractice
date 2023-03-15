@@ -1,0 +1,22 @@
+
+Input:
+s = GeeksForGeeks, x = For
+Output: 5
+Explanation: For is present as substring
+in GeeksForGeeks from index 5 (0 based
+indexing).  
+
+     int strstr(String s, String x)
+    {
+       // Your code here
+       int n=s.length();
+       int k=x.length();
+       
+       for(int i=0;i<=n-k;i++)
+       {
+           if(x.equals(s.substring(i,i+k)))
+           return i;
+       }
+       return -1;
+       
+    }
