@@ -1,0 +1,29 @@
+
+Input:
+S = "socks"
+Output: 3
+Explanation: There are 3 characters between
+the two occurrences of 's'.
+
+     int maxChars (string S)
+    {
+    // your code here
+    unordered_map<char,int> m;
+    int maxi=-1;
+    for(int i=0;i<S.length();i++)
+    {
+        if(m.find(S[i])!=m.end())
+        {
+            int len=i-m[S[i]]-1;
+            if(len>maxi)
+            {
+                maxi=len;
+            }
+        }
+        else
+        {
+            m[S[i]]=i;
+        }
+    }
+    return maxi;
+  }
