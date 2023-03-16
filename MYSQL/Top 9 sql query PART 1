@@ -1,5 +1,4 @@
  ******************************top 9 sql query**********************************
- 
  >>>find 3rd highest salary from employeeinfo table;
  select emp_sal from employeeinfo e1 where 2 =(select count(1) from employeeinfo e2 where e2.salary>e1.salary);
  
