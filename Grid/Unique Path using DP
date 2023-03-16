@@ -3,7 +3,6 @@ package com.java.dsa;
 import java.util.Scanner;
 
 public class UniquePaths {
-
 	private static int cntPathUsingDp(int n, int m, int[][] dp) {
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<m;j++) {
@@ -16,7 +15,6 @@ public class UniquePaths {
 		}
 		return dp[n-1][m-1];
 	}
-
    public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		System.out.print("Enter Row: ");
