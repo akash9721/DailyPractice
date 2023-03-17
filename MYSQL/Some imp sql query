@@ -3,6 +3,7 @@ select* from employee;
 select * from department;
 select * from manager;
 
+
 -- write a sql query to find the name of department where more than 2 emp are working
 select dept_name from department where dept_id IN (select dept_id from employee group by dept_id having count(dept_id)>2);
 select d.dept_name from department d LEFT JOIN employee e ON d.dept_id=e.dept_id group by e.dept_id having count(e.dept_id)>2; 
