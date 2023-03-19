@@ -1,0 +1,14 @@
+strlist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+numlist = [100, 50, 65, 82, 23]
+
+print("\n Sort in ascending order: ")
+strlist.sort()
+print(strlist)
+numlist.sort()
+print(numlist)
+
+print("\n Sort in descending order: ")
+strlist.sort(reverse=True)
+print(strlist)
+numlist.sort(reverse=True)
+print(numlist)
