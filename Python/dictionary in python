@@ -1,0 +1,35 @@
+student = {
+    "akash":22,
+    "yash":23,
+    "poojitha":22,
+    "monu":24
+}
+print(student)
+
+# access and update
+print(student["akash"])
+student["monu"]=25
+print(student)
+
+# gets keys and values
+print("\n get keys and value data:")
+print(student.keys())
+print(student.values())
+
+# remove item
+print("\n after removing data:")
+student.pop("yash")
+print(student)
+
+# iterate data
+print("\n iterations: ")
+for x in student:
+  print(x)
+  
+print()
+for x in student.values():
+  print(x)
+
+print()
+for x, y in student.items():
+  print(x, y)
