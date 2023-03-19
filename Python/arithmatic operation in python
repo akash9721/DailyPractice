@@ -1,0 +1,10 @@
+print("addition is: "+str(5+2))
+print("substraction is: "+str(5-2))
+print("multiplication is: "+str(5*2))
+print("divide is: "+str(10/2))
+print("divide is: "+str(5/2))
+
+print("divide is: "+str(5//2))     #important
+print("modulo is: "+str(5%2))
+
+print("power is: "+str(5**2))
