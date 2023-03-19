@@ -1,0 +1,36 @@
+list1 = [5,3,8,1,9,2,0]
+for i in list1:
+    print(i , end=' ')
+
+print()
+print(len(list1))
+print(max(list1))
+print(min(list1))
+print(sum(list1))
+
+sum = 0
+for i in list1:
+    sum+=i
+print(sum)
+
+# list indexing
+print(list1[1:4])
+print(list1[:])
+print(list1[0])
+
+list1.append(111);
+print(list1)
+list1.insert(6,55)
+print(list1)
+
+# check whether element is exisits or not
+print(0 in list1)
+
+list1.clear()
+print(list1)
+
+# extend list
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+print(thislist)
