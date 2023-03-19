@@ -1,0 +1,14 @@
+name = "Akash Kumar"
+print(name)
+print(name.upper())
+print(name.lower())
+print(name.capitalize())
+
+print(name.find('a'))
+print(name.replace("Kumar", "Kashyap"))
+
+# check whether char or string present in exsisting string
+print()
+newStr="hii there how are you , where are you from ?"
+print("hii" in newStr)
+print(newStr.count("you"))
