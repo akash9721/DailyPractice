@@ -28,7 +28,6 @@ public class NthLargestElement {
 		System.out.println("Third smallest no is: "+third);
 	}
 	
-
 	private static void find3smallestII(int[] a,int k) {
 		//max priority queue
 		PriorityQueue<Integer> pQueue=new PriorityQueue<>(Collections.reverseOrder());
