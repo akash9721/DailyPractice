@@ -27,7 +27,6 @@ public class NthLargestElement {
 		System.out.println("Third highest no: "+third);
 	}
 	
-
 	private static void find3HighestII(int[] a,int k) {
 		//by default it is min priority queue
 		PriorityQueue<Integer> pQueue=new PriorityQueue<>();
