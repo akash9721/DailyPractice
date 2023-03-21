@@ -20,7 +20,7 @@ public class StreamApiQuestions {
 		//7. frequency of each student in list
 		Map<String, Long> collect = str.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 		System.out.println(collect);
-		
+		 
 		//8. group data based on name length
 		Map<Integer, List<String>> collect2 = str.stream(). collect(Collectors.groupingBy(String::length));
 		System.out.println(collect2);
