@@ -50,3 +50,37 @@ public class EmployeeApp {
 		emp.stream().sorted((a, b) -> a.getSalary() - b.getSalary()).forEach(System.out::println);
 	}
 }
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++  output  ++++++++++++++++++++++++++++++++++++++++++++++
+
+1. Average of male and female employee
+{Female=67001.14285714286, Male=61800.0}
+
+2. Who has the most working experience in the companmy
+Michel
+
+3. Details of youngest female employee from HR department
+Linda
+
+4. Find employee who has 3rd highest salary
+John
+
+5. Sort employee details based on salary
+Employee [age=24, name=Linda, salary=3000, department=HR, gender=Female, yearOfjoining=2016]
+Employee [age=23, name=Garry, salary=40000, department=Tech, gender=Male, yearOfjoining=2014]
+Employee [age=37, name=Ram, salary=48000, department=Tech, gender=Male, yearOfjoining=2014]
+Employee [age=28, name=John, salary=50000, department=HR, gender=Male, yearOfjoining=2014]
+Employee [age=32, name=Liping, salary=50300, department=Tech, gender=Female, yearOfjoining=2013]
+Employee [age=21, name=xiaodong, salary=50600, department=Ops, gender=Male, yearOfjoining=2019]
+Employee [age=26, name=Roma, salary=51000, department=Tech, gender=Female, yearOfjoining=2015]
+Employee [age=31, name=Julie, salary=56000, department=Ops, gender=Female, yearOfjoining=2017]
+Employee [age=31, name=Mathew, salary=60000, department=HR, gender=Male, yearOfjoining=2017]
+Employee [age=30, name=Jessica, salary=65000, department=Ops, gender=Female, yearOfjoining=2013]
+Employee [age=29, name=Agnes, salary=73000, department=Ops, gender=Female, yearOfjoining=2017]
+Employee [age=29, name=John, salary=89000, department=Ops, gender=Male, yearOfjoining=2014]
+Employee [age=26, name=Michel, salary=95000, department=Tech, gender=Male, yearOfjoining=2013]
+Employee [age=40, name=Harry, salary=170708, department=Tech, gender=Female, yearOfjoining=2017]
