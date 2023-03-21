@@ -48,3 +48,34 @@ public class EmployeeApp {
 		System.out.println(deptName);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+++++++++++++++++++++++++++++++++   output    +++++++++++++++++++++++++++++++++++++++++
+ 1. Get details of highest paid employee
+Harry
+
+2. List of employee who joined after 2014
+[Roma, Mathew, Linda, Agnes, Julie, xiaodong, Harry]
+
+3. No of male and female employee in company
+No of male employee: 7
+No of female employee: 7
+
+4.Average salary of all employee
+64400.57142857143
+
+5. Name of all departments
+[HR, Tech, Ops]
+
