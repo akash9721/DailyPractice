@@ -1,0 +1,26 @@
+str = "welcome to cdot"
+
+print(str[5])  # indexing
+print(str[0:7])   # slicing
+print(str[0::2])  # alternate slicing
+print(str[0:7:2])  # alternate slicing
+
+# iteration in reverse order
+print(str[-1::-1])  # reverse order iteration
+print(str[-1:-5:-1]) # slicing in reverse manner
+
+
+''' iteration in string 1st method '''
+print('\niteration of string 1st method ')
+for i in range(len(str)):
+    print(str[i], end=' ')
+
+''' iteration in string 2nd method '''
+print('\niteration of string 2nd method ')
+for i in str:
+    print(i , end='')
+
+''' iteration in reverse order '''
+print('\nReverse iteration of string')
+for i in range(len(str)-1,-1,-1):
+    print(str[i] , end=' ')
