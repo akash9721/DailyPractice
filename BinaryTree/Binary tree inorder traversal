@@ -42,5 +42,6 @@ public class BinaryTree {
 		System.out.println("Inorder traversal: ");
 		inorder(root);
 	}
+	
 
 }
