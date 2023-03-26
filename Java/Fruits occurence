@@ -22,5 +22,4 @@ public class FruitsOccurence {
 		String[] arr = { "apple", "banana", "mango", "apple", "apple", "mango", "banana", "mango", "lichi" };
 		cntFruits(arr);
 	}
-
 }
