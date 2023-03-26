@@ -1,0 +1,42 @@
+package com.java.dsa;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class FruitsOccurence {
+
+	private static void fruitsFrequency(String[] fruits) {
+	   Map<String, Integer> map=new HashMap<>();
+	   for(int i=0;i<fruits.length;i++) {
+		   if(map.containsKey(fruits[i])) {
+			   map.put(fruits[i], map.get(fruits[i])+1);
+		   }
+		   else {
+			   map.put(fruits[i], 1);
+		   }
+	   }
+	   
+	   for(Map.Entry entry: map.entrySet()) {
+		   System.out.println(entry.getKey()+" -> "+entry.getValue());
+	   }
+	   
+	   System.out.println("Sort based on fruits frequency:");
+	   
+	   Set<Entry<String, Integer>> entrySet = map.entrySet();
+	   List<Entry<String, Integer>> list1 = new ArrayList<>(entrySet);
+	   Collections.sort(list1,(s1,s2)->s1.getValue()-s2.getValue());
+	   list1.forEach(s->System.out.println(s.getKey()+" -> "+s.getValue()));
+	}
+	
+ 
+	public static void main(String[] args) {
+		String[] fruits = { "apple", "banana", "mango", "apple", "apple", "mango", "banana", "mango", "lichi" };
+		fruitsFrequency(fruits);
+	}
+
+}
