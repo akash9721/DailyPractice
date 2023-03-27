@@ -12,3 +12,6 @@ strlist.sort(reverse=True)
 print(strlist)
 numlist.sort(reverse=True)
 print(numlist)
+
+
+
