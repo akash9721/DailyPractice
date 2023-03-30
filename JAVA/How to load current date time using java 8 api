@@ -19,5 +19,6 @@ public class DateTimeApi {
 		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy-MM-dd h:mm a");
 		LocalDateTime dateTime = LocalDateTime.now();
 		System.out.println("Today's Date and Time: " + dtf2.format(dateTime));
+		
 	}
 }
