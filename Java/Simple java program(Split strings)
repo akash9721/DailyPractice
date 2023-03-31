@@ -8,5 +8,5 @@ public class Test1 {
 	for(String st:arr) {
 		System.out.print(st+" ");
 	}
-}
+  }
 }
