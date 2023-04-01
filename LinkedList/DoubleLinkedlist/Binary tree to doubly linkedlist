@@ -21,11 +21,11 @@
     }
     Node * bToDLL(Node *root)
     {
-		// taken two variable for making linkedlist
+	// taken two variable for making linkedlist
         Node*head=NULL;
         Node*prev=NULL;
 		
-		// taking flage for if i visit first time to root node then make it a first node of dll
+	// taking flage for if i visit first time to root node then make it a first node of dll
         bool flag=true;
         binarytodll(root,head,prev,flag);
         return head;
