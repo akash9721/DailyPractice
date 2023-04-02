@@ -1,0 +1,7 @@
+no=int(input("Enter a no:"))
+def evenodd(no):
+    if(no%2)==0:
+        print("No is even")
+    else:
+        print("No is odd")
+evenodd(no)
