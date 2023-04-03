@@ -7,4 +7,5 @@ if(n==w):
     print("no is palindron")
 else:
     print("no is not palindron")
+    
 
