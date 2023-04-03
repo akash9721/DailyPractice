@@ -1,0 +1,15 @@
+n=int(input("enter a no: "))
+def armstronNo(n):
+    res=0
+    rem=0
+    num=n
+    while(n!=0):
+        rem=n%10
+        res+=rem*rem*rem
+        n=n//10
+    if(res==num):
+        print("no is armstrong")
+    else:
+        print("no is not armstrong")
+
+armstronNo(n)
